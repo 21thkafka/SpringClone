@@ -14,7 +14,7 @@ public class BoardDAOImpl implements BoardDAO {
 	private SqlSession session;
 	
 	//BoardMapper.xml에 있는 namespace 주소 복붙
-	private String namespace = "com.jth.exercise.board.mapper";
+	private String namespace = "com.jth.exercise.board.mapper.";
 	
 	@Override
 	public int insertBoard(BoardVO boardVO) {

@@ -1,11 +1,13 @@
 package com.jth.exercise.board.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.jth.exercise.board.dao.BoardDAO;
 import com.jth.exercise.board.service.BoardService;
 import com.jth.exercise.board.vo.BoardVO;
 
+@Service
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
