@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-	
+
+<!-- 게시판 -->	
 <mapper namespace="com.jth.exercise.board.mapper">
 	
+	<!-- 게시판 저장 -->
 	<insert id="insertBoard">
 		INSERT INTO board
 		(
@@ -18,5 +20,14 @@
 			, #{contents}		
 		)
 	</insert>
+	
+	<!-- 게시판 조회 -->
+	<select id="selectBoardList"
+			resultType="com.jth.exercise.board.vo.BoardVO">
+		SELECT	id					/* id */
+				, title				/* 제목 */
+				, contents			/* 내용 */
+		FROM	board
+	</select>
 	
 </mapper>
