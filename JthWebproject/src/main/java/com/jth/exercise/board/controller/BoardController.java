@@ -71,4 +71,23 @@ public class BoardController {
 		return "board/list";
 	}
 
+	/**
+	 * 게시판 상세
+	 * @param model
+	 * @param boardVO
+	 * @return
+	 * @throws Exception
+	 */
+	@GetMapping("/board/detail")
+	public String boardDetail(Model model, BoardVO boardVO) throws Exception {
+		logger.info("BoardController, boardList.");
+
+		BoardVO resultData = boardService.selectBoardDetail(boardVO);
+		logger.info("resultData : {}", resultData.toString());
+		
+		model.addAttribute("resultData", resultData);
+		
+		return "board/detail";
+	}
+	
 }

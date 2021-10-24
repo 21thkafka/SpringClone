@@ -9,5 +9,7 @@ public interface BoardDAO {
 	int insertBoard(BoardVO boardVO);
 	
 	List<BoardVO> selectBoardList();
+	
+	BoardVO selectBoardDetail(BoardVO boardVO);
 
 }

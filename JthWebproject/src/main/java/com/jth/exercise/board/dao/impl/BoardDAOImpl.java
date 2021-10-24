@@ -31,4 +31,10 @@ public class BoardDAOImpl implements BoardDAO {
 		return session.selectList(namespace +"selectBoardList");
 	}
 
+	@Override
+	public BoardVO selectBoardDetail(BoardVO boardVO) {
+		
+		return session.selectOne(namespace + "selectBoardDetail", boardVO);
+	}
+
 }

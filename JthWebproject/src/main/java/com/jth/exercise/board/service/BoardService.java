@@ -9,4 +9,6 @@ public interface BoardService {
 	public int insertBoard(BoardVO boardVO) throws Exception;
 	
 	public List<BoardVO> selectBoardList() throws Exception;
+	
+	public BoardVO selectBoardDetail(BoardVO boardVO) throws Exception;
 }

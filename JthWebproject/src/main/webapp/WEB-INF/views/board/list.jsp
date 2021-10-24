@@ -16,11 +16,11 @@
 </head>
 <body>
 <h1>게시판</h1>
-	<table>
+	<table class="table table-striped">
 		<c:forEach var="board" items="${resultList }" varStatus="status">
 			<tr>
 				<td>${board.id}</td>
-				<td>${board.title}</td>
+				<td><a href="/board/detail?id=${board.id}">${board.title}</a></td>
 				<td>${board.contents} </td>
 			</tr>
 		</c:forEach>
