@@ -26,5 +26,7 @@
 		<td>${resultData.contents}</td>
 	</tr>
 </table>
+<button id="btnModify">수정</button>
+<button id="btnDelete">삭제</button>
 </body>
 </html>

@@ -17,6 +17,12 @@ $(document).ready(function(){
 		$("#formData").submit();
 	});
 	
+	$("#btnList").on("click", function(){
+		
+		location.href = "/board/list";
+		
+	});
+	
 });
 </script>
 </head>
@@ -27,5 +33,6 @@ $(document).ready(function(){
 게시판 내용 <input type="text" id="boardContents" name="contents"/><br/>
 </form>
 <input type="submit" id ="btnRegister" value="등록"/>
+<input type="submit" id ="btnList" value="목록"/>
 </body>
 </html>

@@ -28,6 +28,7 @@
 				, title				/* 제목 */
 				, contents			/* 내용 */
 		FROM	board
+		ORDER BY id desc
 	</select>
 	
 	<!-- 게시판 상세조회 -->
