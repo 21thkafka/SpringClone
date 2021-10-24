@@ -37,4 +37,15 @@ public class BoardDAOImpl implements BoardDAO {
 		return session.selectOne(namespace + "selectBoardDetail", boardVO);
 	}
 
+	@Override
+	public int updateBoard(BoardVO boardVO) {
+		
+		return session.update(namespace + "updateBoard", boardVO);
+	}
+
+	@Override
+	public int deleteBoard(BoardVO boardVO) {
+		return session.delete(namespace + "deleteBoard", boardVO);
+	}
+
 }

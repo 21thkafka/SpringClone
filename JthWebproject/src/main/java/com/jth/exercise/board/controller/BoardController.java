@@ -90,4 +90,59 @@ public class BoardController {
 		return "board/detail";
 	}
 	
+	/**
+	 * 수정화면으로 이동
+	 * @param model
+	 * @param boardVO
+	 * @return
+	 * @throws Exception
+	 */
+	@GetMapping("/board/modify")
+	public String boardModify(Model model, BoardVO boardVO) throws Exception {
+		
+		logger.info("BoardController, boardList.");
+		
+		BoardVO resultData = boardService.selectBoardDetail(boardVO);
+		logger.info("resultData : {}", resultData.toString());
+		
+		model.addAttribute("resultData", resultData);
+		
+		return "board/modify";
+	}
+	
+	/**
+	 * 수정동작
+	 * @param boardVO
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/board/modify")
+	public String boardModifyPost(BoardVO boardVO) throws Exception{
+		
+		logger.info("BoardController, boardModifyPost.");
+		
+		int result = boardService.updateBoard(boardVO);
+		
+		logger.info("result : {}", result);
+		
+		return "board/result";
+	}
+	/**
+	 * 삭제 동작
+	 * @param boardVO
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/board/delete")
+	public String boardDeletePost(BoardVO boardVO) throws Exception{
+		
+		logger.info("BoardController, boardDeletePost.");
+		
+		int result = boardService.deleteBoard(boardVO);
+		
+		logger.info("result : {}", result );
+		
+		return "board/result";
+	}
+	
 }
