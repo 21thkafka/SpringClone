@@ -20,6 +20,14 @@ $(document).ready(function() {
 	});
 	
 });
+
+//빨간, 파란 버튼 테스트
+function fn_excelDownload(){
+	var frm = document.goDepInfoFrm;
+	frm.action = "<c:url value='/board/selectButton.do'/>";
+	frm.submit();
+	
+}
 </script>
 </head>
 <body>
@@ -34,5 +42,6 @@ $(document).ready(function() {
 		</c:forEach>
 	</table>
 	<button id="btnRegister">등록</button>
+<a href="javascript:fn_excelDownload();" name="blue_btn">파란 버튼</a>
 </body>
 </html>

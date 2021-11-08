@@ -24,6 +24,14 @@ $(document).ready(function(){
 	});
 	
 });
+//빨간, 파란 버튼 테스트
+function fn_excelDownload(){
+	var frm = document.goDepInfoFrm;
+	frm.action = "<c:url value='/board/selectButton.do'/>";
+	frm.submit();
+	
+}
+
 </script>
 </head>
 <body>
@@ -42,6 +50,7 @@ $(document).ready(function(){
 </table>
 <button id="btnModify">수정</button>
 <button id="btnDelete">삭제</button>
+<a href="javascript:fn_excelDownload();" name="red_btn">빨간 버튼</a>
 <form id="formDelete" method="post" action="/board/delete">
 	<input type="hidden" name="id" value="${resultData.id }" />
 </form>

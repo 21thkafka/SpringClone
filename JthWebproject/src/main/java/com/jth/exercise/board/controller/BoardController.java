@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jth.exercise.board.service.BoardService;
+import com.jth.exercise.board.service.UserService;
 import com.jth.exercise.board.vo.BoardVO;
+import com.jth.exercise.board.vo.UserVO;
 /**
  * 저장화면 이동
  * @author 신명현
@@ -26,6 +28,9 @@ public class BoardController {
 	
 	@Autowired
 	private BoardService boardService;
+
+	@Autowired
+	private UserService userService;
 	
 	@GetMapping("/board/register")
 	public String boardRegister(Model model) throws Exception {
@@ -83,7 +88,7 @@ public class BoardController {
 		logger.info("BoardController, boardList.");
 
 		BoardVO resultData = boardService.selectBoardDetail(boardVO);
-		logger.info("resultData : {}", resultData.toString());
+//		logger.info("resultData : {}", resultData.toString());
 		
 		model.addAttribute("resultData", resultData);
 		
@@ -143,6 +148,20 @@ public class BoardController {
 		logger.info("result : {}", result );
 		
 		return "board/result";
+	}
+	
+	@RequestMapping("/board/selectButton.do")
+	public void selectButton(UserVO userVO, BoardVO boardVo){
+		
+		if(){
+			List<UserVO> resultList = userService.selectUserList();
+			logger.info("resultList : {}", resultList.toString());
+		} else {
+			List<BoardVO> resultList = boardService.selectBoardList();
+			logger.info("resultList : {}", resultList.toString());
+		}
+		
+		
 	}
 	
 }

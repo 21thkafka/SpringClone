@@ -58,4 +58,14 @@
 		WHERE id = #{id}
 	</delete>
 	
+	<!-- 유저 조회 -->
+	<select id="selectUserList"
+			resultType="com.jth.exercise.board.vo.UserVO">
+		SELECT	id					/* id */
+				, password			/* 비밀번호 */
+			
+		FROM	user
+		ORDER BY id desc
+	</select>
+	
 </mapper>
