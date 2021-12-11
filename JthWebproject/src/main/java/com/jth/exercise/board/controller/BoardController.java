@@ -150,18 +150,5 @@ public class BoardController {
 		return "board/result";
 	}
 	
-	@RequestMapping("/board/selectButton.do")
-	public void selectButton(UserVO userVO, BoardVO boardVo){
-		
-		if(){
-			List<UserVO> resultList = userService.selectUserList();
-			logger.info("resultList : {}", resultList.toString());
-		} else {
-			List<BoardVO> resultList = boardService.selectBoardList();
-			logger.info("resultList : {}", resultList.toString());
-		}
-		
-		
-	}
 	
 }
